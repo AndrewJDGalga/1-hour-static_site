@@ -1,5 +1,7 @@
 *.odt
+*.odt#
 dist/
+design/
 .astro/
 .vscode/
 node_modules/
