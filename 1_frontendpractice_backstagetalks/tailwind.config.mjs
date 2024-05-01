@@ -1,7 +1,12 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		fontFamily : {
+			'sans': ['Roboto', defaultTheme.fontFamily.sans]
+		},
 		colors : {
 			white: '#fff',
 			pink:{ 
@@ -10,7 +15,6 @@ export default {
 			},
 			black: {
 				100:'#251d20',
-
 				300: '#000'
 			},
 			cyan: '#00c1b5',
