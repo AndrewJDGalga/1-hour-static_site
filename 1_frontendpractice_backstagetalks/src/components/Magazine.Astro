@@ -6,6 +6,10 @@ const {imgPath, imgAlt, magTitle, defEuroBuy, ukOverseaBuy, selectedBuy='#'} = A
     <img src={imgPath} alt={imgAlt}>
     <p>{magTitle}</p>
     <div>
+        {(defEuroBuy && ukOverseaBuy) && <p><a href={defEuroBuy}>BUY HERE</a> &#40;Europe&#41;</p>}
+        {(defEuroBuy && ukOverseaBuy) && <p><a href={ukOverseaBuy}>BUY HERE</a> &#40;UK & Overseas&#41;</p>}
+        {(defEuroBuy && ukOverseaBuy) && <p>or in <a href={selectedBuy}>selected stores</a></p>}
+        
         {(!defEuroBuy && !ukOverseaBuy) && <p>If you are lucky, you may get the last pieces in <a href={selectedBuy}>selected stores</a>.</p>}
     </div>
 </section>
