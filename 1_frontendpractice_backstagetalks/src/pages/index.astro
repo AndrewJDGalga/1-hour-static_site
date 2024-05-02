@@ -6,7 +6,7 @@ import Magazine from '@components/Magazine.astro';
 <HeadMeta />
 <body >
     <img class="float-start w-2/6 mt-5 ml-4" src="./logo.png" alt="BACKSTAGE TALKS">
-    <div class="snap-y snap-mandatory">
+    <div id="watcher" class="snap-y snap-mandatory">
     <Magazine ID="issue7" magTitle="Issue #7" imgPath="backstagetalks_cover_issue_7.png" imgAlt="Issue #5: 'Empathy for sale.'" defEuroBuy="#" ukOverseaBuy="#" bgColor="bg-pink-200" />
     <Magazine ID="issue6" magTitle="Issue #6" imgPath="backstagetalks_cover_issue_6.png" imgAlt="Issue #6: Stylized duck-like figure walking a hole in the floorboards." />
     <Magazine ID="issue5" magTitle="Issue #5" imgPath="backstagetalks_cover_issue_5.png" imgAlt="Issue #5: 'Good designers are half pragmatic and half idealistic.'" />
@@ -17,3 +17,15 @@ import Magazine from '@components/Magazine.astro';
     </div>
 </body>
 </html>
+
+<script>
+    let ancestor = document.querySelector('#watcher');
+    let scrollOptions = {
+        root : null,
+        rootMargin : '20%',
+        threshold : 0.75
+    };
+    let observer = new IntersectionObserver(()=>{console.log('passed')}, scrollOptions);
+    let target = document.querySelector('#issue6');
+    observer.observe(target);
+</script>
