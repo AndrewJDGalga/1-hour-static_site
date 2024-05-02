@@ -1,17 +1,20 @@
 ---
-const {imgPath, imgAlt, bgColor, magTitle, defEuroBuy, ukOverseaBuy, selectedBuy='#', ID} = Astro.props;
+const {imgPath, imgAlt, bgColor, magTitle, ID} = Astro.props;
 
 ---
-<section id={ID} class=`text-center h-screen ${bgColor} snap-start`>
+<section id={ID} class=`text-center h-screen snap-start` data-color={bgColor}>
     <div class="pt-16">
         <img class="w-4/5 max-w-[420px] m-auto aspect-3/4" src={imgPath} alt={imgAlt}>
         <p class="font-bold mb-4 text-lg">{magTitle}</p>
         <div>
+            <slot />
+            <!--
             {(defEuroBuy && ukOverseaBuy) && <p><a href={defEuroBuy}>BUY HERE</a> &#40;Europe&#41;</p>}
             {(defEuroBuy && ukOverseaBuy) && <p><a href={ukOverseaBuy}>BUY HERE</a> &#40;UK & Overseas&#41;</p>}
             {(defEuroBuy && ukOverseaBuy) && <p>or in <a href={selectedBuy}>selected stores</a></p>}
             
             {(!defEuroBuy && !ukOverseaBuy) && <p>If you are lucky, you may get the last pieces in <a href={selectedBuy}>selected stores</a>.</p>}
+             -->
         </div>
     </div>
 </section>
