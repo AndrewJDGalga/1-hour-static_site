@@ -1,8 +1,8 @@
 ---
-const {imgPath, imgAlt, bgColor, magTitle, defEuroBuy, ukOverseaBuy, selectedBuy='#'} = Astro.props;
+const {imgPath, imgAlt, bgColor, magTitle, defEuroBuy, ukOverseaBuy, selectedBuy='#', ID} = Astro.props;
 
 ---
-<section class=`text-center h-screen ${bgColor} snap-start`>
+<section id={ID} class=`text-center h-screen ${bgColor} snap-start`>
     <div class="pt-16">
         <img class="w-4/5 max-w-[420px] m-auto aspect-3/4" src={imgPath} alt={imgAlt}>
         <p class="font-bold mb-4 text-lg">{magTitle}</p>
