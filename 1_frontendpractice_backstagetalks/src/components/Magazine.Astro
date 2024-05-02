@@ -1,10 +1,10 @@
 ---
-const {imgPath, imgAlt, magTitle, defEuroBuy, ukOverseaBuy, selectedBuy='#'} = Astro.props;
+const {imgPath, imgAlt, bgColor, magTitle, defEuroBuy, ukOverseaBuy, selectedBuy='#'} = Astro.props;
 
 ---
-<section class="text-center h-screen">
+<section class=`text-center h-screen ${bgColor} snap-start`>
     <div class="pt-16">
-        <img class="w-4/5 m-auto" src={imgPath} alt={imgAlt}>
+        <img class="w-4/5 max-w-[420px] m-auto aspect-3/4" src={imgPath} alt={imgAlt}>
         <p class="font-bold mb-4 text-lg">{magTitle}</p>
         <div>
             {(defEuroBuy && ukOverseaBuy) && <p><a href={defEuroBuy}>BUY HERE</a> &#40;Europe&#41;</p>}

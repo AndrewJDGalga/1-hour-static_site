@@ -23,7 +23,11 @@ export default {
 			blue: '#1d3fbb',
 			red: '#E30512'
 		},
-		extend: {},
+		extend: {
+			aspectRatio : {
+				'3/4': ' 3 / 4'
+			}
+		},
 	},
 	plugins: [],
 }
