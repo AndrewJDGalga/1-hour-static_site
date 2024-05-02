@@ -2,9 +2,9 @@
 const {imgPath, imgAlt, magTitle, defEuroBuy, ukOverseaBuy, selectedBuy='#'} = Astro.props;
 
 ---
-<section>
-    <img src={imgPath} alt={imgAlt}>
-    <p>{magTitle}</p>
+<section class="text-center h-screen">
+    <img class="w-4/5 m-auto" src={imgPath} alt={imgAlt}>
+    <p class="font-bold mb-4 text-lg">{magTitle}</p>
     <div>
         {(defEuroBuy && ukOverseaBuy) && <p><a href={defEuroBuy}>BUY HERE</a> &#40;Europe&#41;</p>}
         {(defEuroBuy && ukOverseaBuy) && <p><a href={ukOverseaBuy}>BUY HERE</a> &#40;UK & Overseas&#41;</p>}
