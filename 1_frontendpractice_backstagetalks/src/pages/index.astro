@@ -8,11 +8,11 @@ import Footer from "@layouts/Footer.astro";
     <HeadMeta />
     <body class="transition-colors">
         <img
-            class="float-start w-2/6 mt-5 ml-4"
+            class="w-40 sm:w-[260px] mt-5 ml-4"
             src="./logo.png"
             alt="BACKSTAGE TALKS"
         />
-        <div id="container" class="h-full">
+        <div>
             <Magazine
                 ID="issue7"
                 magTitle="Issue #7"
@@ -67,7 +67,6 @@ import Footer from "@layouts/Footer.astro";
         </div>
         <Footer />
     </body><script>
-        const container = document.querySelector("#container");
         const bod = document.querySelector("body");
         const sects = document.querySelectorAll("section");
         const scrollOptions = {
