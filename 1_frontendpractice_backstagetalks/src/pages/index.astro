@@ -1,74 +1,102 @@
 ---
-import HeadMeta from '@layouts/HeadMeta.astro';
-import Magazine from '@components/Magazine.astro';
-import Footer from '@layouts/Footer.astro';
+import HeadMeta from "@layouts/HeadMeta.astro";
+import Magazine from "@components/Magazine.astro";
+import Footer from "@layouts/Footer.astro";
 ---
+
 <html lang="en-US">
-<HeadMeta />
-<body class="overflow-scroll">
-    <img class="float-start w-2/6 mt-5 ml-4" src="./logo.png" alt="BACKSTAGE TALKS">
-    <div id="container" class="snap-y snap-mandatory h-full">
-        <Magazine ID="issue7" magTitle="Issue #7" imgPath="backstagetalks_cover_issue_7.png" imgAlt="Issue #5: 'Empathy for sale.'" defEuroBuy="#" ukOverseaBuy="#" bgColor="bg-pink-200" />
-        <Magazine ID="issue6" magTitle="Issue #6" imgPath="backstagetalks_cover_issue_6.png" imgAlt="Issue #6: Stylized duck-like figure walking a hole in the floorboards." bgColor="bg-white" />
-        <Magazine ID="issue5" magTitle="Issue #5" imgPath="backstagetalks_cover_issue_5.png" imgAlt="Issue #5: 'Good designers are half pragmatic and half idealistic.'" bgColor="bg-cyan" />
-        <Magazine ID="issue4" magTitle="Issue #4 is sold out." imgPath="backstagetalks_cover_issue_4.png" imgAlt="Issue #4: 'Designers have to stop being stupid.'" bgColor="bg-orange"/>
-        <Magazine ID="issue3" magTitle="Issue #3" imgPath="backstagetalks_cover_issue_3.png" imgAlt="Issue #3: 'Hartmut Esslinger, et al.'" bgColor="bg-yellow" />
-        <Magazine ID="issue2" magTitle="Issue #2" imgPath="backstagetalks_cover2017.png" imgAlt="Issue #2: 'Oliviero Toscani, et al.'" bgColor="bg-blue"/>
-        <Magazine ID="issue1" magTitle="Issue #1 is sold out." imgPath="backstagetalks_cover2016_n.png" imgAlt="Issue #1: 'Michael Wolff, et al.'" bgColor="bg-red"/>
-    </div>
-    <Footer />
-</body>
-</html>
+    <HeadMeta />
+    <body class="transition-colors">
+        <img
+            class="float-start w-2/6 mt-5 ml-4"
+            src="./logo.png"
+            alt="BACKSTAGE TALKS"
+        />
+        <div id="container" class="h-full">
+            <Magazine
+                ID="issue7"
+                magTitle="Issue #7"
+                imgPath="backstagetalks_cover_issue_7.png"
+                imgAlt="Issue #5: 'Empathy for sale.'"
+                defEuroBuy="#"
+                ukOverseaBuy="#"
+                bgColor="bg-pink-200"
+            />
+            <Magazine
+                ID="issue6"
+                magTitle="Issue #6"
+                imgPath="backstagetalks_cover_issue_6.png"
+                imgAlt="Issue #6: Stylized duck-like figure walking a hole in the floorboards."
+                bgColor="bg-white"
+            />
+            <Magazine
+                ID="issue5"
+                magTitle="Issue #5"
+                imgPath="backstagetalks_cover_issue_5.png"
+                imgAlt="Issue #5: 'Good designers are half pragmatic and half idealistic.'"
+                bgColor="bg-cyan"
+            />
+            <Magazine
+                ID="issue4"
+                magTitle="Issue #4 is sold out."
+                imgPath="backstagetalks_cover_issue_4.png"
+                imgAlt="Issue #4: 'Designers have to stop being stupid.'"
+                bgColor="bg-orange"
+            />
+            <Magazine
+                ID="issue3"
+                magTitle="Issue #3"
+                imgPath="backstagetalks_cover_issue_3.png"
+                imgAlt="Issue #3: 'Hartmut Esslinger, et al.'"
+                bgColor="bg-yellow"
+            />
+            <Magazine
+                ID="issue2"
+                magTitle="Issue #2"
+                imgPath="backstagetalks_cover2017.png"
+                imgAlt="Issue #2: 'Oliviero Toscani, et al.'"
+                bgColor="bg-blue"
+            />
+            <Magazine
+                ID="issue1"
+                magTitle="Issue #1 is sold out."
+                imgPath="backstagetalks_cover2016_n.png"
+                imgAlt="Issue #1: 'Michael Wolff, et al.'"
+                bgColor="bg-red"
+            />
+        </div>
+        <Footer />
+    </body><script>
+        const container = document.querySelector("#container");
+        const bod = document.querySelector("body");
+        const sects = document.querySelectorAll("section");
+        const scrollOptions = {
+            root: null,
+            rootMargin: "10%",
+            threshold: 1,
+        };
+        let currentColorClass = "bg-pink-200";
 
-<script>
-    const container = document.querySelector('#container');
-    const bod = document.querySelector('body');
-    const sects = document.querySelectorAll('section');
-    const scrollOptions = {
-        root : null,
-        rootMargin : '20%',
-        threshold : 1
-    };
-    let currentColorClass = 'bg-white';
+        window.onload = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.intersectionRatio === 1) {
+                        bod.classList.remove(currentColorClass);
+                        //@ts-ignore
+                        currentColorClass = entry.target.dataset.color;
+                        bod.classList.add(currentColorClass);
+                    }
+                });
+            }, scrollOptions);
 
-    window.onload = () =>{
-        
-    const visibleOnScreen = (elem) => {
-        const {top, bottom } = elem.getBoundingClientRect();
-        const {innerHeight} = window;
-        console.log(top, ' ', (bottom-top), ' ', innerHeight);
-        //console.log(Math.ceil(window.scrollY / innerHeight));
-        return (top >= 0 && top < innerHeight) && (bottom > 0 && (bottom-top) <= innerHeight);
-    }
-    for(const child of container.children) {
-        //console.log(child);
-        //console.log(visibleOnScreen(child));
-        if(visibleOnScreen(child)){
-            console.log(child);
-        }
-    }
-    }
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach((entry) => {
-            if(entry.intersectionRatio !== 0){
-                bod.classList.remove(currentColorClass);
-                //@ts-ignore
-                currentColorClass = entry.target.dataset.color;
-                bod.classList.add(currentColorClass);
+            for (const target of sects) {
+                observer.observe(target);
             }
-        })
-    }, scrollOptions);
 
-    for(const target of sects) {
-        observer.observe(target);
-    }
-
-    /*
-    console.log(document.documentElement.scrollTop);
-    console.log(document.body.scrollTop);
-    console.log(bod.style.height);
-    console.log(document.documentElement.scrollTop / 7);
-    */
-    
-</script>
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        };
+    </script>
+</html>

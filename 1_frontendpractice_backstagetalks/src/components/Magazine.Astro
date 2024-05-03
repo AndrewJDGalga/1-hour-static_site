@@ -1,9 +1,10 @@
 ---
 const {imgPath, imgAlt, bgColor, magTitle, ID} = Astro.props;
-
+//class="pt-16"
+//h-screen
 ---
-<section id={ID} class=`text-center h-screen snap-start` data-color={bgColor}>
-    <div class="pt-16">
+<section id={ID} class=`text-center` data-color={bgColor}>
+    <div >
         <img class="w-4/5 max-w-[420px] m-auto aspect-3/4" src={imgPath} alt={imgAlt}>
         <p class="font-bold mb-4 text-lg">{magTitle}</p>
         <div>
