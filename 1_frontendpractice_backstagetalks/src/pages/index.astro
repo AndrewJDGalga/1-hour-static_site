@@ -24,13 +24,13 @@ import Magazine from '@components/Magazine.astro';
     const scrollOptions = {
         root : null,
         rootMargin : '20%',
-        threshold : 0.75
+        threshold : 1
     };
     let currentColorClass = 'bg-white';
+
     const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.intersectionRatio > 0.74 && entry.intersectionRatio < 0.76) {
-                //console.log(entry.intersectionRatio);
+        entries.forEach((entry) => {
+            if(entry.intersectionRatio !== 0){
                 bod.classList.remove(currentColorClass);
                 //@ts-ignore
                 currentColorClass = entry.target.dataset.color;
