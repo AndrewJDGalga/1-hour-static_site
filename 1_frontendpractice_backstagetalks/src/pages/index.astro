@@ -13,17 +13,15 @@ import BuyCluster from "@components/BuyCluster.astro";
             src="./logo.png"
             alt="BACKSTAGE TALKS"
         />
-        <div>
+        <div class="">
             <Magazine
                 ID="issue7"
                 magTitle="Issue #7"
                 imgPath="backstagetalks_cover_issue_7.png"
                 imgAlt="Issue #5: 'Empathy for sale.'"
-                defEuroBuy="#"
-                ukOverseaBuy="#"
                 bgColor="bg-pink-200"
             >
-                <BuyCluster defEuroBuy="#"/>
+                <BuyCluster defEuroBuy="#" ukOverseaBuy="#" linkColor="text-white" />
             </Magazine>
             <Magazine
                 ID="issue6"
@@ -31,42 +29,54 @@ import BuyCluster from "@components/BuyCluster.astro";
                 imgPath="backstagetalks_cover_issue_6.png"
                 imgAlt="Issue #6: Stylized duck-like figure walking a hole in the floorboards."
                 bgColor="bg-white"
-            />
+            >
+                <BuyCluster defEuroBuy="#" linkColor="text-pink-100" />
+            </Magazine>
             <Magazine
                 ID="issue5"
                 magTitle="Issue #5"
                 imgPath="backstagetalks_cover_issue_5.png"
                 imgAlt="Issue #5: 'Good designers are half pragmatic and half idealistic.'"
                 bgColor="bg-cyan"
-            />
+            >
+                <BuyCluster defEuroBuy="#" linkColor="text-white" />
+            </Magazine>
             <Magazine
                 ID="issue4"
                 magTitle="Issue #4 is sold out."
                 imgPath="backstagetalks_cover_issue_4.png"
                 imgAlt="Issue #4: 'Designers have to stop being stupid.'"
                 bgColor="bg-orange"
-            />
+            >
+                <BuyCluster linkColor="text-white" />
+            </Magazine>
             <Magazine
                 ID="issue3"
                 magTitle="Issue #3"
                 imgPath="backstagetalks_cover_issue_3.png"
                 imgAlt="Issue #3: 'Hartmut Esslinger, et al.'"
                 bgColor="bg-yellow"
-            />
+            >
+                <BuyCluster defEuroBuy="#" linkColor="text-white" />
+            </Magazine>
             <Magazine
                 ID="issue2"
                 magTitle="Issue #2"
                 imgPath="backstagetalks_cover2017.png"
                 imgAlt="Issue #2: 'Oliviero Toscani, et al.'"
                 bgColor="bg-blue"
-            />
+            >
+                <BuyCluster defEuroBuy="#" linkColor="text-white" />
+            </Magazine>
             <Magazine
                 ID="issue1"
                 magTitle="Issue #1 is sold out."
                 imgPath="backstagetalks_cover2016_n.png"
                 imgAlt="Issue #1: 'Michael Wolff, et al.'"
                 bgColor="bg-red"
-            />
+            >
+                <BuyCluster linkColor="text-white" />
+            </Magazine>
         </div>
         <Footer />
     </body><script>

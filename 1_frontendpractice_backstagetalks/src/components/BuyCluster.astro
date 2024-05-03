@@ -1,16 +1,9 @@
 ---
-const { defEuroBuy, ukOverseaBuy, selectedBuy = "#" } = Astro.props;
-const BuyEurope = (defEuroBuy) && 'p';
+const { defEuroBuy, ukOverseaBuy, selectedBuy = "#", linkColor } = Astro.props;
 ---
 
-<div>
-    <BuyEurope><a href={defEuroBuy}>BUY HERE</a> &#40;Europe&#41;</BuyEurope>
-    <!--
-    {(defEuroBuy && ukOverseaBuy) && <p><a href={defEuroBuy}>BUY HERE</a> &#40;Europe&#41;</p>}
-    {(defEuroBuy && ukOverseaBuy) && <p><a href={ukOverseaBuy}>BUY HERE</a> &#40;UK & Overseas&#41;</p>}
-    {(defEuroBuy && ukOverseaBuy) && <p>or in <a href={selectedBuy}>selected stores</a></p>}
-    
-    {(!defEuroBuy && !ukOverseaBuy) && <p>If you are lucky, you may get the last pieces in <a href={selectedBuy}>selected stores</a>.</p>}
-    -->
-
+<div class="">
+    {defEuroBuy && <p><a href={defEuroBuy} class={linkColor}>BUY HERE</a> &#40;Europe&#41;</p>}
+    {ukOverseaBuy && <p><a href={ukOverseaBuy} class={linkColor}>BUY HERE</a> &#40;UK & Overseas&#41;</p>}
+    <p>May be available in <a href={selectedBuy} class={linkColor}>selected stores</a>.</p>
 </div>
