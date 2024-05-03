@@ -5,5 +5,5 @@ const { defEuroBuy, ukOverseaBuy, selectedBuy = "#", linkColor } = Astro.props;
 <div class="font-bold">
     {defEuroBuy && <p><a href={defEuroBuy} class={linkColor}>BUY HERE</a> &#40;Europe&#41;</p>}
     {ukOverseaBuy && <p><a href={ukOverseaBuy} class={linkColor}>BUY HERE</a> &#40;UK & Overseas&#41;</p>}
-    <p>May be available in <a href={selectedBuy} class={linkColor}>selected stores</a>.</p>
+    <p class="mt-5 text-sm">May be available in <a href={selectedBuy} class={linkColor}>selected stores</a>.</p>
 </div>
