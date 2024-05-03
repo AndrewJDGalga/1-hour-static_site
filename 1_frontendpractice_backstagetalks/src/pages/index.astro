@@ -2,6 +2,7 @@
 import HeadMeta from "@layouts/HeadMeta.astro";
 import Magazine from "@components/Magazine.astro";
 import Footer from "@layouts/Footer.astro";
+import BuyCluster from "@components/BuyCluster.astro";
 ---
 
 <html lang="en-US">
@@ -21,7 +22,9 @@ import Footer from "@layouts/Footer.astro";
                 defEuroBuy="#"
                 ukOverseaBuy="#"
                 bgColor="bg-pink-200"
-            />
+            >
+                <BuyCluster defEuroBuy="#"/>
+            </Magazine>
             <Magazine
                 ID="issue6"
                 magTitle="Issue #6"
