@@ -1,10 +1,10 @@
 ---
 const {imgPath, imgAlt, bgColor, magTitle, ID} = Astro.props;
 ---
-<section id={ID} class=`text-center mt-10 mb-24` data-color={bgColor}>
+<section id={ID} class=`text-center mt-10 mb-24 lg:relative lg:left-1/2 lg:-translate-x-1/2 lg:h-screen lg:snap-center` data-color={bgColor}>
     <div >
         <img class="w-4/5 max-w-[420px] m-auto aspect-3/4" src={imgPath} alt={imgAlt}>
-        <p class="font-bold mb-4 text-lg">{magTitle}</p>
+        <p class="font-bold mb-4 text-lg ">{magTitle}</p>
         <slot />
     </div>
 </section>
