@@ -1,6 +1,7 @@
 ---
 import HeadMeta from '@layouts/HeadMeta.astro';
 import Magazine from '@components/Magazine.astro';
+import Footer from '@layouts/Footer.astro';
 ---
 <html lang="en-US">
 <HeadMeta />
@@ -15,10 +16,12 @@ import Magazine from '@components/Magazine.astro';
         <Magazine ID="issue2" magTitle="Issue #2" imgPath="backstagetalks_cover2017.png" imgAlt="Issue #2: 'Oliviero Toscani, et al.'" bgColor="bg-blue"/>
         <Magazine ID="issue1" magTitle="Issue #1 is sold out." imgPath="backstagetalks_cover2016_n.png" imgAlt="Issue #1: 'Michael Wolff, et al.'" bgColor="bg-red"/>
     </div>
+    <Footer />
 </body>
 </html>
 
 <script>
+    const container = document.querySelector('#container');
     const bod = document.querySelector('body');
     const sects = document.querySelectorAll('section');
     const scrollOptions = {
@@ -27,6 +30,24 @@ import Magazine from '@components/Magazine.astro';
         threshold : 1
     };
     let currentColorClass = 'bg-white';
+
+    window.onload = () =>{
+        
+    const visibleOnScreen = (elem) => {
+        const {top, bottom } = elem.getBoundingClientRect();
+        const {innerHeight} = window;
+        console.log(top, ' ', (bottom-top), ' ', innerHeight);
+        //console.log(Math.ceil(window.scrollY / innerHeight));
+        return (top >= 0 && top < innerHeight) && (bottom > 0 && (bottom-top) <= innerHeight);
+    }
+    for(const child of container.children) {
+        //console.log(child);
+        //console.log(visibleOnScreen(child));
+        if(visibleOnScreen(child)){
+            console.log(child);
+        }
+    }
+    }
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach((entry) => {
@@ -42,4 +63,12 @@ import Magazine from '@components/Magazine.astro';
     for(const target of sects) {
         observer.observe(target);
     }
+
+    /*
+    console.log(document.documentElement.scrollTop);
+    console.log(document.body.scrollTop);
+    console.log(bod.style.height);
+    console.log(document.documentElement.scrollTop / 7);
+    */
+    
 </script>
