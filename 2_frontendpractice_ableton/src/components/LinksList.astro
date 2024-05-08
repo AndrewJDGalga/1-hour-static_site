@@ -1,6 +1,7 @@
 ---
-const {title='', listItems=[]} = Astro.props;
+const {title='', listItems={}} = Astro.props;
+Object.keys(listItems);
 ---
 <ul>
-    {listItems.map(data => <li>{data}</li>)}
+    { Object.keys(listItems).map(item=><li><a href={listItems[item]}>{item}</a></li>) }
 </ul>
