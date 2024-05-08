@@ -4,35 +4,47 @@ import IconLink from "../components/IconLink.astro";
 ---
 
 <footer>
-    <h2>Ableton</h2>
-    <div class="grid grid-cols-3 grid-rows-2">
-        <div>
-            <LinksList listItems={
-                {
-                    'Register Live or Push >':'#', 
-                    'About Ableton >':'#',
-                    'Jobs >' : '#',
-                }} />
-            <ul class="flex flex-row justify-around">
-                <IconLink targetLink="#" imgLink="fb_icon.svg" altTest="Facebook icon" /> 
-                <IconLink targetLink="#" imgLink="twit_icon.svg" altTest="Twitter icon" />
-                <IconLink targetLink="#" imgLink="./yt_icon.svg" altTest="YouTube icon" />
-                <IconLink targetLink="#" imgLink="./insta_icon.svg" altTest="Instagram icon" />
-                <IconLink targetLink="#" imgLink="./tt_icon.svg" altTest="TikTok icon" />
+    <div class="w-10/12 m-auto">
+        <h2>Ableton</h2>
+        <div class="grid grid-cols-3 grid-rows-2">
+            <div>
+                <LinksList listItems={
+                    {
+                        'Register Live or Push >':'#', 
+                        'About Ableton >':'#',
+                        'Jobs >' : '#',
+                    }} />
+                <ul class="flex flex-row justify-around">
+                    <IconLink targetLink="#" imgLink="fb_icon.svg" altTest="Facebook icon" /> 
+                    <IconLink targetLink="#" imgLink="twit_icon.svg" altTest="Twitter icon" />
+                    <IconLink targetLink="#" imgLink="./yt_icon.svg" altTest="YouTube icon" />
+                    <IconLink targetLink="#" imgLink="./insta_icon.svg" altTest="Instagram icon" />
+                    <IconLink targetLink="#" imgLink="./tt_icon.svg" altTest="TikTok icon" />
+                </ul>
+            </div>
+            <LinksList title="Education" listItems={{
+                'Offers for students and teaders >':'#',
+                'Ableton for the Classroom >':'#',
+                'Ableton for Colleges and Universities >' : '#'
+            }}/>
+            <ul>
+                <li><p>Sign up to our newsletter</p></li>
+                <li><p>Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more.</p></li>
+                <li>
+                    <input id="newsletter-email" type="email" placeholder="Email Address">
+                    <label for="newsletter-email">Sign up</label>
+                </li>
             </ul>
         </div>
-        <LinksList title="Education" listItems={{
-            'Offers for students and teaders >':'#',
-            'Ableton for the Classroom >':'#',
-            'Ableton for Colleges and Universities >' : '#'
-        }}/>
-        <ul>
-            <li><p>Sign up to our newsletter</p></li>
-            <li><p>Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more.</p></li>
-            <li>
-                <input id="newsletter-email" type="email" placeholder="Email Address">
-                <label for="newsletter-email">Sign up</label>
-            </li>
-        </ul>
+        <nav>
+            <ul class="flex flex-row">
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Press Resources</a></li>
+                <li><a href="#">Legal Info</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookie Settings</a></li>
+                <li><a href="#">Imprint</a></li>
+            </ul>
+        </nav>
     </div>
 </footer>
