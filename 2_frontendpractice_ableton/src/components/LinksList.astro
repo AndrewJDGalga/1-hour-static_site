@@ -3,5 +3,6 @@ const {title='', listItems={}} = Astro.props;
 Object.keys(listItems);
 ---
 <ul>
+    {title && <li>{title}</li>}
     { Object.keys(listItems).map(item=><li><a href={listItems[item]}>{item}</a></li>) }
 </ul>
