@@ -1,3 +1,8 @@
 ---
-
+const {targetLink, imgLink, altTest} = Astro.props;
 ---
+<li>
+    <a href={targetLink}>
+        <img class="w-12 h-12" src={imgLink} alt={altTest} />
+    </a>
+</li>
