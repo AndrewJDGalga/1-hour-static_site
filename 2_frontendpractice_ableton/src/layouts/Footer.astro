@@ -31,8 +31,10 @@ import IconLink from "../components/IconLink.astro";
                 <li><p>Sign up to our newsletter</p></li>
                 <li><p>Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more.</p></li>
                 <li>
-                    <input id="newsletter-email" type="email" placeholder="Email Address">
-                    <label for="newsletter-email">Sign up</label>
+                    <form>
+                        <input id="newsletter-email" type="email" placeholder="Email Address">
+                        <button type="submit">Sign up</button>
+                    </form>
                 </li>
             </ul>
         </div>
@@ -45,6 +47,7 @@ import IconLink from "../components/IconLink.astro";
                 <li><a href="#">Cookie Settings</a></li>
                 <li><a href="#">Imprint</a></li>
             </ul>
+            
         </nav>
     </div>
 </footer>
