@@ -1,0 +1,7 @@
+---
+const {listItems={}} = Astro.props;
+---
+
+<select>
+    { Object.keys(listItems).map(item=><option value={listItems[item]}>{item}</option>) }
+</select>

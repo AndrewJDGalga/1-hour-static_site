@@ -1,6 +1,7 @@
 ---
 import LinksList from "../components/LinksList.astro";
 import IconLink from "../components/IconLink.astro";
+import OptionGroup from "../components/OptionGroup.astro";
 ---
 
 <footer>
@@ -45,6 +46,15 @@ import IconLink from "../components/IconLink.astro";
             <ul>
                 <li><p>Language and Location</p></li>
                 <li>
+                    <OptionGroup listItems={{
+                        English:'en',
+                        Deutsch:'de',
+                        'Francais':'fr',
+                        '日本語':'ja',
+                        '简体中文':'zh-ch',
+                        'Español':'es'
+                    }} />
+                    <!-- 
                     <select>
                         <option value="en">English</option>
                         <option value="de">Deutsch</option>
@@ -56,6 +66,7 @@ import IconLink from "../components/IconLink.astro";
                     <select>
                         <option></option>
                     </select>
+                    -->
                 </li>
             </ul>
         </div>
