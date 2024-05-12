@@ -5,8 +5,9 @@ import OptionGroup from "../components/OptionGroup.astro";
 ---
 
 <footer>
+    <div class="border-t-2 border-grey mb-20"></div>
     <div class="w-10/12 m-auto">
-        <h2>Ableton</h2>
+        <h2 class="font-bold text-6xl mb-10">Ableton</h2>
         <div class="grid grid-cols-3 grid-rows-2">
             <div>
                 <LinksList listItems={
@@ -29,7 +30,7 @@ import OptionGroup from "../components/OptionGroup.astro";
                 'Ableton for Colleges and Universities >' : '#'
             }}/>
             <ul>
-                <li><p>Sign up to our newsletter</p></li>
+                <li><p class="font-semibold">Sign up to our newsletter</p></li>
                 <li><p>Enter your email address to stay up to date with the latest offers, tutorials, downloads, surveys and more.</p></li>
                 <li>
                     <form class="flex flex-row">
@@ -44,7 +45,7 @@ import OptionGroup from "../components/OptionGroup.astro";
                 'Become a Certified Trainer >' : '#'
             }} />
             <ul>
-                <li><p>Language and Location</p></li>
+                <li><p class="font-semibold">Language and Location</p></li>
                 <li>
                     <OptionGroup listItems={{
                         English:'en',
