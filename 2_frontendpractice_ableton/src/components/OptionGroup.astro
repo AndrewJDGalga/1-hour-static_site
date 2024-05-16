@@ -2,6 +2,6 @@
 const {listItems={}} = Astro.props;
 ---
 
-<select>
+<select class="bg-grey pr-8">
     { Object.keys(listItems).map(item=><option value={listItems[item]}>{item}</option>) }
 </select>
