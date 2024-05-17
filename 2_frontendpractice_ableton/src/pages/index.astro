@@ -9,11 +9,22 @@ import StickyBar from "../components/StickyBar.astro"
 <body class="font-sans">
     <Header />
     <StickyBar />
-    <main class="w-10/12 m-auto">
-        <h1 class="absolute top-2/4 left-2/4 text-9xl -translate-x-2/4 -translate-y-2/4 text-orange font-semibold">Ableton</h1>
-        <img src="./hero_img.png" alt="Man at desk">
-        <p class="text-lg">We make <a href="#" class="text-blue-200">Live</a>, <a class="text-blue-200">Push</a>, <a class="text-blue-200">Note</a> and <a class="text-blue-200">Live</a> — unique software and hardware for music creation and performance. With these products, our community of users creates amazing things.</p>
-        <p>Ableton was founded in 1999 and released the first version of Live in 2001. Our products are used by a community of dedicated musicians, sound designers, and artists from across the world.</p>
+    <main class="">
+        <div class="w-10/12 m-auto">
+            <h1 class="absolute top-2/4 left-2/4 text-9xl -translate-x-2/4 -translate-y-2/4 text-orange font-semibold">Ableton</h1>
+            <img src="./hero_img.png" alt="Man at desk">
+        </div>
+        <div class="w-8/12 m-auto">
+            <p class="text-xl">
+                We make <a href="#" class="text-blue-200">Live</a>, <a class="text-blue-200">Push</a>, <a class="text-blue-200">Note</a> and <a class="text-blue-200">Live</a> — unique software and hardware for music creation and performance. With these products, our community of users creates amazing things.
+            </p>
+            <p>Ableton was founded in 1999 and released the first version of Live in 2001. Our products are used by a community of dedicated musicians, sound designers, and artists from across the world.</p>
+        </div>
+        <div class="bg-yellow w-2/4 h-2/4 min-h-2/4"></div>
+        <div class="w-10/12 m-auto">
+            <img src="./audio_switch.jpg" alt="Woman uses audio board">
+            <img src="./training_books.jpg" alt="Wall of training books.">
+        </div>
     </main>
     <Footer />
 </body>
