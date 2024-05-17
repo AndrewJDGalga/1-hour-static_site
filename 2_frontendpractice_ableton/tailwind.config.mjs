@@ -18,7 +18,12 @@ export default {
 			green : '#B6FFC0',
 			purple : '#D5B3FF'
 		},
-		extend: {},
+		extend: {
+			backgroundImage : {
+				'keys-img' : "url('/audio_switch.jpg')",
+				'books-img' : "url('/training_books.jpg')"
+			}
+		},
 	},
 	plugins: [],
 }
