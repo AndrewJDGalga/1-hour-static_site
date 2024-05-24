@@ -1,5 +1,8 @@
-# Static site in 1 hour
+# Quick Static Sites (goal: 1hr)
 Repo for projects produced as part of attempting to reach the 1 hour mark on static site production. I encountered this requirement on a job application in April, and I failed to meet the goal. 
+
+## On hold due to early coursework start. Not to resume until overloaded schedule concluded.
+
 ## Rules: 
 1. Each site will be no more than 1 page. 
 2. Tailwind for styling. I believe the people who claim it makes them faster.
